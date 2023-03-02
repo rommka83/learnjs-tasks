@@ -1,8 +1,8 @@
 Function.prototype.defer = function (ms) {
   const context = this;
-  return function (...arg) {
+  return function () {
     setTimeout(() => {
-      return context.apply(this, arg);
+      return context.apply(this, arguments);
     }, ms);
   };
 };
