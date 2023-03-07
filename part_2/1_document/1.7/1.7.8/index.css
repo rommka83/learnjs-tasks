@@ -1,0 +1,25 @@
+span {
+  font-size: 20px;
+  font-weight: 700;
+}
+.container {
+  margin: 0 auto;
+  padding-top: 50px;
+  max-width: 300px;
+  text-align: center;
+}
+.h {
+  color: red;
+}
+.min {
+  color: green;
+}
+.s {
+  color: blue;
+}
+.blockBtn {
+  margin-top: 20px;
+}
+.btn {
+  padding: 5px 20px;
+}
