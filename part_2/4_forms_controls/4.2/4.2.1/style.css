@@ -1,0 +1,17 @@
+.div {
+  display: block;
+
+  margin: 20px auto;
+  padding: 20px;
+
+  width: 300px;
+
+  background-color: #f3f3f3;
+  box-shadow: 5px 5px 10px grey;
+
+  border-radius: 10px;
+  cursor: pointer;
+
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+}
