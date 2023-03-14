@@ -1,15 +1,41 @@
-class FormatError extends SyntaxError {
-  constructor(message) {
-    super(message);
-    this.name = 'FormatError';
-  }
+function go() {
+  // showCircle(150, 150, 100, (div) => {
+  //   div.classList.add('message-ball');
+  //   div.append('Привет, мир!');
+  // });
+
+  showCircle(150, 150, 100).then((div) => {
+    div.classList.add('message-ball');
+    div.append('Hello, world!');
+  });
 }
 
-let err = new FormatError('ошибка форматирования');
+function showCircle(cx, cy, radius, callback) {
+  let div = document.createElement('div');
+  div.style.width = 0;
+  div.style.height = 0;
+  div.style.left = cx + 'px';
+  div.style.top = cy + 'px';
+  div.className = 'circle';
+  document.body.append(div);
 
-console.log(err.message); // ошибка форматирования
-console.log(err.name); // FormatError
-console.log(err.stack); // stack
+  // div.style.width = radius * 2 + 'px';
+  // div.style.height = radius * 2 + 'px';
 
-console.log(err instanceof FormatError); // true
-console.log(err instanceof SyntaxError); // true (потому что наследует от SyntaxError)
+  // div.addEventListener('transitionend', function handler() {
+  //   div.removeEventListener('transitionend', handler);
+  //   return new Promise(resolve(div));
+  // });
+
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      div.style.width = radius * 2 + 'px';
+      div.style.height = radius * 2 + 'px';
+
+      div.addEventListener('transitionend', function handler() {
+        div.removeEventListener('transitionend', handler);
+        resolve(div);
+      });
+    }, 0);
+  });
+}

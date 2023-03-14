@@ -1,15 +1,5 @@
-class FormatError extends SyntaxError {
-  constructor(message) {
-    super(message);
-    this.name = 'FormatError';
-  }
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-let err = new FormatError('ошибка форматирования');
-
-console.log(err.message); // ошибка форматирования
-console.log(err.name); // FormatError
-console.log(err.stack); // stack
-
-console.log(err instanceof FormatError); // true
-console.log(err instanceof SyntaxError); // true (потому что наследует от SyntaxError)
+delay(3000).then(() => console.log('выполнилось через 3 секунды'));
